@@ -268,7 +268,7 @@ class CavendishTemplate extends BaseTemplate {
 				foreach ( $personalTools as $key => $item ) {
 			?>
 				<li id="<?php echo Sanitizer::escapeIdForAttribute( "pt-$key" ) ?>" class="<?php
-					if ( $item['active'] ) { ?>active <?php } ?>top-nav-element">
+					if ( $item['active'] ?? false ) { ?>active <?php } ?>top-nav-element">
 					<span class="top-nav-left">&nbsp;</span>
 					<?php
 					// Crappy hack for Echo
