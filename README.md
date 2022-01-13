@@ -26,6 +26,3 @@ Whether to add QR code to all pages (true) or not (false)
 
 `$wgCavendishQRUrlAdd`
 Used to track campaign for entry through QR Code in analytics software (e.g. Google Analytics, Piwik, ...); default is "?pk_campaign=qr-code"
-
-`$wgCavendishColor`
-Select color of the theme: blue, brown or green (default is blue)
