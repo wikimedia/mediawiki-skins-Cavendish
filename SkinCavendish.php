@@ -9,8 +9,9 @@ class SkinCavendish extends SkinTemplate {
 	 */
 	private $cavendishConfig;
 
-	public function __construct() {
+	public function __construct( $options ) {
 		$this->cavendishConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'cavendish' );
+		parent::__construct( $options );
 	}
 
 	/**
@@ -21,7 +22,6 @@ class SkinCavendish extends SkinTemplate {
 		$modules = [
 			'skins.cavendish',
 			'skins.cavendish.' . $this->cavendishConfig->get( 'CavendishColor' ),
-			'skins.cavendish.dynamic'
 		];
 
 		if ( $this->cavendishConfig->get( 'CavendishExtensionCSS' ) ) {
@@ -29,5 +29,6 @@ class SkinCavendish extends SkinTemplate {
 		}
 
 		$out->addModuleStyles( $modules );
+		parent::initPage( $out );
 	}
 }

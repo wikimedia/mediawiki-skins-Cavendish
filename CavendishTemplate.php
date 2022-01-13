@@ -242,6 +242,34 @@ class CavendishTemplate extends BaseTemplate {
 	}
 
 	/**
+	 * Generate the class for the globalWrapper element
+	 * @return string
+	 */
+	private function getGlobalWrapperAttributes( Config $config, string $action ): string {
+		$siteWidth = $config->get( 'CavendishSiteWidth' );
+		$qrCodeMode = $config->get( 'CavendishQRCodeMode' );
+		$sidebarSearchbox = $config->get( 'CavendishSidebarSearchbox' );
+
+		$classes = [
+			htmlspecialchars( $action, ENT_QUOTES )
+		];
+		if ( $qrCodeMode === 'print' ) {
+			$classes[] = 'cavendish-qr-code-mode-print';
+		} elseif ( $qrCodeMode === 'all' ) {
+			$classes[] = 'cavendish-qr-code-mode-all';
+		}
+
+		if ( $sidebarSearchbox ) {
+			$classes[] = 'cavendish-sidebar-searchbox';
+		}
+		return Html::expandAttributes( [
+			'id' => 'globalWrapper',
+			'class' => $classes,
+			'style' => $siteWidth !== false ? 'width: ' . $sideWidth . 'px;' : null,
+		] );
+	}
+
+	/**
 	 * Template filter callback for Cavendish skin.
 	 * Takes an associative array of data set from a SkinTemplate-based
 	 * class, and a wrapper for MediaWiki's localization database, and
@@ -258,7 +286,7 @@ class CavendishTemplate extends BaseTemplate {
 		$this->html( 'headelement' );
 ?>
 <div id="internal"></div>
-<div id="globalWrapper" class="<?php echo htmlspecialchars( $action, ENT_QUOTES ) ?>">
+<div <?php echo $this->getGlobalWrapperAttributes( $this->getSkin()->getConfig(), $action ) ?>>
 	<div id="p-personal" class="portlet">
 		<h5><?php $this->msg( 'personaltools' ) ?></h5>
 		<div class="pBody">
@@ -293,8 +321,27 @@ class CavendishTemplate extends BaseTemplate {
 	<div id="header">
 		<a name="top" id="contentTop"></a>
 		<h6>
-		<a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>"
-			title="<?php $this->msg( 'mainpage' ) ?>"><?php $this->text( 'pagetitle' ) ?></a></h6>
+		<?php
+			$logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
+			$logo = $logos['1x-options'] ?? [];
+			$logo += [
+				'margin' => 10,
+				'height' => 53,
+				'width' => 322,
+			];
+			$logoAttributes = $logos['1x'] ?
+				[
+					'class' => 'mw-wiki-logo',
+					'style' => 'width: ' . $logo['width'] .
+						'px; height: ' . $logo['height'] .
+						'px; margin-top: ' . $logo['margin'],
+				] : [];
+			$logoAttributes += [
+				'href' => $this->data['nav_urls']['mainpage']['href'],
+				'title' => $this->getMsg( 'mainpage' ),
+			];
+		?>
+		<a <?php echo Html::expandAttributes( $logoAttributes ); ?>><?php $this->text( 'pagetitle' ) ?></a></h6>
 		<div id="p-cactions" class="portlet" role="navigation">
 			<ul>
 			<?php

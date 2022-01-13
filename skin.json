@@ -21,10 +21,6 @@
 	"config": {
 		"CavendishColor": "blue",
 		"CavendishExtensionCSS": true,
-		"CavendishLogoURL": false,
-		"CavendishLogoWidth": 322,
-		"CavendishLogoHeight": 53,
-		"CavendishLogoMargin": 10,
 		"CavendishQRUrlAdd": "?pk_campaign=qr-code",
 		"CavendishQRCode": false,
 		"CavendishQRCodeMode": "all",
@@ -55,11 +51,9 @@
 				},
 				"resources/print.css": {
 					"media": "print"
-				}
+				},
+				"resources/dynamic.css": true
 			}
-		},
-		"skins.cavendish.dynamic": {
-			"class": "ResourceLoaderCavendishSkinModule"
 		},
 		"skins.cavendish.extensions": {
 			"styles": {
@@ -95,7 +89,6 @@
 		"remoteSkinPath": "Cavendish"
 	},
 	"AutoloadClasses": {
-		"ResourceLoaderCavendishSkinModule": "ResourceLoaderCavendishSkinModule.php",
 		"SkinCavendish": "SkinCavendish.php",
 		"CavendishTemplate": "CavendishTemplate.php"
 	},

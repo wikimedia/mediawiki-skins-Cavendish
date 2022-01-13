@@ -1,0 +1,6 @@
+/** These styles are configurable via configuration */
+.cavendish-qr-code-mode-all #f-poweredbyico,
+.cavendish-qr-code-mode-print #qrcode,
+.cavendish-sidebar-searchbox #nav #p-search {
+	display: none;
+}

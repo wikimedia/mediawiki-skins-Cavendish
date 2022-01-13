@@ -10,17 +10,10 @@ The Cavendish skin requires the [MonoBook skin](https://www.mediawiki.org/wiki/S
 ## Customization
 There are different options that can be set in `LocalSettings.php`.
 
-`$wgCavendishLogoURL`
-URL to the logo image that should be displayed in the header
-
-`$wgCavendishLogoWidth`
-width of the logo as a number in px
-
-`$wgCavendishLogoHeight`
-height of the logo as a number in px
-
-`$wgCavendishLogoMargin`
-offset on top of the logo
+`$wgLogos['1x-options] = [ 'width' => 10, 'height' => 20, 'margin' => 10 ]`
+* width of the logo as a number in px
+*height of the logo as a number in px
+* offset on top of the logo
 
 `$wgCavendishSiteWidth`
 fixed width of the content area, if not set it's dynamic (default is false, that means dynamic)

@@ -626,6 +626,11 @@ div#header {
 	background-size: 100%;
 }
 
+.mw-wiki-logo {
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+
 #header h6 {
 	position: absolute;
 	top: 0;
