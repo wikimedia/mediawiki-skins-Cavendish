@@ -19,7 +19,6 @@
 		"cavendish": "GlobalVarConfig::newInstance"
 	},
 	"config": {
-		"CavendishExtensionCSS": true,
 		"CavendishQRUrlAdd": "?pk_campaign=qr-code",
 		"CavendishQRCode": false,
 		"CavendishQRCodeMode": "all",
@@ -28,7 +27,7 @@
 	},
 	"ValidSkinNames": {
 		"cavendish": {
-			"class": "SkinCavendish",
+			"class": "SkinTemplate",
 			"args": [
 				{
 					"name": "cavendish",
@@ -41,7 +40,7 @@
 			]
 		},
 		"cavendish-brown": {
-			"class": "SkinCavendish",
+			"class": "SkinTemplate",
 			"args": [
 				{
 					"name": "cavendish",
@@ -54,7 +53,7 @@
 			]
 		},
 		"cavendish-green": {
-			"class": "SkinCavendish",
+			"class": "SkinTemplate",
 			"args": [
 				{
 					"name": "cavendish",
@@ -126,7 +125,6 @@
 		"remoteSkinPath": "Cavendish"
 	},
 	"AutoloadClasses": {
-		"SkinCavendish": "SkinCavendish.php",
 		"CavendishTemplate": "CavendishTemplate.php"
 	},
 	"ResourceModuleSkinStyles": {

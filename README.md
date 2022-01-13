@@ -18,9 +18,6 @@ There are different options that can be set in `LocalSettings.php`.
 `$wgCavendishSiteWidth`
 fixed width of the content area, if not set it's dynamic (default is false, that means dynamic)
 
-`$wgCavendishExtensionCSS`
-DEPRECATED. Set this to false if you do not want to use Cavendish CSS for certain extensions (default is true). As of 12 June 2017 Cavendish automatically uses its own CSS for the following extensions if and when said extensions are installed: Babel, Cite, InputBox, LiquidThread, WikiEditor
-
 `$wgCavendishQRCode`
 Whether to add QR code to all pages (true) or not (false)
 
