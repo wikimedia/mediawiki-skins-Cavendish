@@ -27,7 +27,7 @@
 	},
 	"ValidSkinNames": {
 		"cavendish": {
-			"class": "SkinTemplate",
+			"class": "SkinCavendish",
 			"args": [
 				{
 					"name": "cavendish",
@@ -40,7 +40,7 @@
 			]
 		},
 		"cavendish-brown": {
-			"class": "SkinTemplate",
+			"class": "SkinCavendish",
 			"args": [
 				{
 					"name": "cavendish",
@@ -53,7 +53,7 @@
 			]
 		},
 		"cavendish-green": {
-			"class": "SkinTemplate",
+			"class": "SkinCavendish",
 			"args": [
 				{
 					"name": "cavendish",
@@ -125,7 +125,8 @@
 		"remoteSkinPath": "Cavendish"
 	},
 	"AutoloadClasses": {
-		"CavendishTemplate": "CavendishTemplate.php"
+		"CavendishTemplate": "CavendishTemplate.php",
+		"SkinCavendish": "SkinCavendish.php"
 	},
 	"ResourceModuleSkinStyles": {
 		"cavendish-brown": {
