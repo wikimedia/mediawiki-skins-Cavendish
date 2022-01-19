@@ -1,4 +1,5 @@
 <?php
+
 class CavendishTemplate extends BaseTemplate {
 	public $skin;
 
@@ -459,7 +460,7 @@ class CavendishTemplate extends BaseTemplate {
 		<tr>
 			<td>
 				<div id="skin-info">
-					<?php echo $skin->msg( 'cavendish-skin-info', '2.5.0' )->parse() ?>
+					<?php echo $skin->msg( 'cavendish-skin-info', '2.6.0' )->parse() ?>
 				</div>
 			</td>
 		</tr>

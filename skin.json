@@ -3,10 +3,11 @@
 	"author": [
 		"Daniel Schuba",
 		"Jack Phoenix",
-		"Samantha Nguyen"
+    		"Samantha Nguyen",
+		"Jon Robson"
 	],
-	"version": "2.5.0",
-	"@note": "Remember to update the version number in SkinCavendish.php, too, since it's passed to the \"cavendish-skin-info\" i18n message!",
+	"version": "2.6.0",
+	"@note": "Remember to update the version number in CavendishTemplate.php, too, since it's passed to the \"cavendish-skin-info\" i18n message!",
 	"url": "https://www.mediawiki.org/wiki/Skin:Cavendish",
 	"descriptionmsg": "cavendish-desc",
 	"namemsg": "skinname-cavendish",
