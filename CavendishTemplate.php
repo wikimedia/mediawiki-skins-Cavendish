@@ -283,8 +283,7 @@ class CavendishTemplate extends BaseTemplate {
 		$this->data['pageLanguage'] =
 			$this->getSkin()->getTitle()->getPageViewLanguage()->getHtmlCode();
 
-		// HTML starts here
-		$this->html( 'headelement' );
+		// <body> starts here
 ?>
 <div id="internal"></div>
 <div <?php echo $this->getGlobalWrapperAttributes( $this->getSkin()->getConfig(), $action ) ?>>
@@ -468,9 +467,6 @@ class CavendishTemplate extends BaseTemplate {
 </div><!-- end of the FOOTER div -->
 <!-- scripts and debugging information -->
 <?php
-		$this->printTrail();
-		echo Html::closeElement( 'body' );
-		echo Html::closeElement( 'html' );
 	}
 
 	/**

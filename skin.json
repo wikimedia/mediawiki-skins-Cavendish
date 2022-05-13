@@ -6,7 +6,7 @@
     		"Samantha Nguyen",
 		"Jon Robson"
 	],
-	"version": "2.6.0",
+	"version": "3.0.0",
 	"@note": "Remember to update the version number in CavendishTemplate.php, too, since it's passed to the \"cavendish-skin-info\" i18n message!",
 	"url": "https://www.mediawiki.org/wiki/Skin:Cavendish",
 	"descriptionmsg": "cavendish-desc",
@@ -14,7 +14,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.35.0"
+		"MediaWiki": ">= 1.39.0"
 	},
 	"ConfigRegistry": {
 		"cavendish": "GlobalVarConfig::newInstance"
@@ -32,6 +32,7 @@
 			"args": [
 				{
 					"name": "cavendish",
+					"bodyOnly": true,
 					"template": "CavendishTemplate",
 					"styles": [
 						"skins.cavendish",
