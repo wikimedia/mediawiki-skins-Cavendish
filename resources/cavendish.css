@@ -599,10 +599,6 @@ hr.hide {
 	color: #FFD955;
 }
 
-#p-cactions .hiddenStructure {
-	display: none;
-}
-
 /* offsets to distinguish the tab groups */
 #p-cactions li#ca-talk,
 #p-cactions li#ca-watch,
@@ -1224,8 +1220,7 @@ table.floatleft {
 	margin-left: 0;
 }
 
-.urlexpansion,
-.hiddenstructure {
+.urlexpansion {
 	display: none;
 }
 
