@@ -397,9 +397,15 @@ class CavendishTemplate extends BaseTemplate {
 	<table>
 		<tr>
 			<td rowspan="2" class="f-iconsection">
-			<?php if ( $this->data['copyrightico'] ) { ?>
-				<div id="f-copyrightico"><?php echo $this->skin->makeFooterIcon( $this->data['copyrightico'] ) ?></div>
-			<?php } ?>
+			<?php
+			$icons = $this->get( 'footericons' );
+			$icon = $icons['copyright'][0] ?? null;
+			if ( $icon ) {
+				?><div id="f-copyrightico"><?php
+				echo $this->getSkin()->makeFooterIcon( $icon );
+				?></div><?php
+			}
+			?>
 			</td>
 			<td align="center">
 <?php	// Generate additional footer links
