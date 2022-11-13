@@ -229,19 +229,15 @@ a.new:visited,
 .key-point:before {
 	line-height: 0.1;
 	font-size: 1px;
-	/* @embed */
-	background: transparent url("../../images/key-point_tr.gif") no-repeat top right;
 	margin: -15px -15px 0 -15px;
 	height: 15px;
 	display: block;
 	border: none;
 	/* @embed */
-	content: url("../../images/key-point_tl.gif");
+	content: url("images/key-point_tl.gif");
 }
 
 .key-point {
-	/* @embed */
-	background: #e4ecec url("../../images/key-point_back.gif") right repeat-y;
 	padding: 15px;
 	margin-bottom: 1em;
 }
@@ -253,11 +249,9 @@ a.new:visited,
 	line-height: 0.1;
 	font-size: 1px;
 	/* @embed */
-	content: url("../../images/key-point_bl.gif");
+	content: url("images/key-point_bl.gif");
 	margin: -15px;
 	height: 8px;
-	/* @embed */
-	background: transparent url("../../images/key-point_br.gif") scrollno-repeat bottom right;
 }
 
 .key-point h2,
