@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class CavendishTemplate extends BaseTemplate {
 	public $skin;
 
@@ -196,7 +198,8 @@ class CavendishTemplate extends BaseTemplate {
 				unset( $contents['uls'] );
 			}
 			if ( !$this->getSkin()->getUser()->isLoggedIn() &&
-				User::groupHasPermission( '*', 'edit' )
+				MediaWikiServices::getInstance()->getGroupPermissionsLookup()
+					->groupHasPermission( '*', 'edit' )
 			) {
 				$prependiture .= Html::rawElement(
 					'li',
