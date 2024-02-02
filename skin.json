@@ -75,7 +75,7 @@
 	},
 	"ResourceModules": {
 		"skins.cavendish": {
-			"class": "ResourceLoaderSkinModule",
+			"class": "MediaWiki\\ResourceLoader\\SkinModule",
 			"features": [
 				"elements",
 				"interface",
