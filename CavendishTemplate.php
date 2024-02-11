@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\ResourceLoader\SkinModule;
 
 class CavendishTemplate extends BaseTemplate {
 	public $skin;
@@ -325,7 +326,7 @@ class CavendishTemplate extends BaseTemplate {
 		<a name="top" id="contentTop"></a>
 		<h6>
 		<?php
-			$logos = ResourceLoaderSkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
+			$logos = SkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
 			$logo = $logos['1x-options'] ?? [];
 			$logo += [
 				'margin' => 10,
