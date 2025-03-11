@@ -224,7 +224,11 @@ class CavendishTemplate extends BaseTemplate {
 
 		$optionButtons = "\u{00A0} " . $this->makeSearchButton(
 			'fulltext',
-			[ 'id' => 'mw-searchButton', 'class' => 'searchButton' ]
+			[
+				'id' => 'mw-searchButton',
+				'class' => 'searchButton',
+				'value' => $this->getMsg( 'searchbutton' )->text()
+			]
 		);
 		$searchInputId = 'searchInput';
 		$searchForm = Html::rawElement( 'form', [
@@ -233,7 +237,11 @@ class CavendishTemplate extends BaseTemplate {
 		],
 			Html::hidden( 'title', $this->get( 'searchtitle' ) ) .
 			$this->makeSearchInput( [ 'id' => $searchInputId ] ) .
-			$this->makeSearchButton( 'go', [ 'id' => 'searchGoButton', 'class' => 'searchButton' ] ) .
+			$this->makeSearchButton( 'go', [
+				'id' => 'searchGoButton',
+				'class' => 'searchButton',
+				'value' => $this->getMsg( 'searcharticle' )->text()
+			] ) .
 			$optionButtons
 		);
 
@@ -283,14 +291,15 @@ class CavendishTemplate extends BaseTemplate {
 	function execute() {
 		$this->skin = $skin = $this->data['skin'];
 		$action = $skin->getRequest()->getText( 'action', 'view' );
+		$config = $skin->getConfig();
 
 		$this->data['pageLanguage'] =
-			$this->getSkin()->getTitle()->getPageViewLanguage()->getHtmlCode();
+			$skin->getTitle()->getPageViewLanguage()->getHtmlCode();
 
 		// <body> starts here
 ?>
 <div id="internal"></div>
-<div <?php echo $this->getGlobalWrapperAttributes( $this->getSkin()->getConfig(), $action ) ?>>
+<div <?php echo $this->getGlobalWrapperAttributes( $config, $action ) ?>>
 	<div id="p-personal" class="portlet">
 		<h5><?php $this->msg( 'personaltools' ) ?></h5>
 		<div class="pBody">
@@ -313,7 +322,15 @@ class CavendishTemplate extends BaseTemplate {
 						}
 						$item['links'][0]['class'] = $classHTML;
 					}
-					echo $this->makeLink( $key, $item['links'][0], [ 'link-class' => 'top-nav-mid' ] ); ?>
+					if ( $key !== 'anonuserpage' ) {
+						echo $this->makeLink( $key, $item['links'][0], [ 'link-class' => 'top-nav-mid' ] );
+					} else {
+						// Stupid hack for anonuserpage, which is the "Not logged in" text, which is indeed
+						// just a snippet of text, not a link; but we still need the class there to have the area
+						// display properly
+						echo '<p class="top-nav-mid">' . $this->makeLink( $key, $item['links'][0] ) . '</p>';
+					}
+					?>
 					<span class="top-nav-right">&nbsp;</span>
 				</li>
 				<?php
@@ -326,7 +343,7 @@ class CavendishTemplate extends BaseTemplate {
 		<a name="top" id="contentTop"></a>
 		<h6>
 		<?php
-			$logos = SkinModule::getAvailableLogos( $this->getSkin()->getConfig() );
+			$logos = SkinModule::getAvailableLogos( $config );
 			$logo = $logos['1x-options'] ?? [];
 			$logo += [
 				'margin' => 10,
@@ -406,7 +423,7 @@ class CavendishTemplate extends BaseTemplate {
 			$icon = $icons['copyright'][0] ?? null;
 			if ( $icon ) {
 				?><div id="f-copyrightico"><?php
-				echo $this->getSkin()->makeFooterIcon( $icon );
+				echo $skin->makeFooterIcon( $icon );
 				?></div><?php
 			}
 			?>
