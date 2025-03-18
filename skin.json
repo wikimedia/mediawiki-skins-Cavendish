@@ -14,7 +14,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.39.0"
+		"MediaWiki": ">= 1.40.0"
 	},
 	"ConfigRegistry": {
 		"cavendish": "GlobalVarConfig::newInstance"
@@ -45,7 +45,7 @@
 			"class": "SkinTemplate",
 			"args": [
 				{
-					"name": "cavendish",
+					"name": "cavendish-brown",
 					"template": "CavendishTemplate",
 					"styles": [
 						"skins.cavendish",
@@ -58,7 +58,7 @@
 			"class": "SkinTemplate",
 			"args": [
 				{
-					"name": "cavendish",
+					"name": "cavendish-green",
 					"template": "CavendishTemplate",
 					"styles": [
 						"skins.cavendish",
