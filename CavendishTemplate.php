@@ -296,7 +296,7 @@ class CavendishTemplate extends BaseTemplate {
 		$config = $skin->getConfig();
 
 		$this->data['pageLanguage'] =
-			$skin->getTitle()->getPageViewLanguage()->getHtmlCode();
+			$skin->getTitle()->getPageLanguage()->getHtmlCode();
 
 		// <body> starts here
 ?>
