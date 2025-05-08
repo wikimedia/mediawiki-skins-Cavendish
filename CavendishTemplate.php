@@ -3,6 +3,7 @@
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\ResourceLoader\SkinModule;
 
 class CavendishTemplate extends BaseTemplate {
