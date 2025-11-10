@@ -14,10 +14,10 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.40.0"
+		"MediaWiki": ">= 1.41.0"
 	},
 	"ConfigRegistry": {
-		"cavendish": "GlobalVarConfig::newInstance"
+		"cavendish": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"config": {
 		"CavendishQRUrlAdd": "?pk_campaign=qr-code",
